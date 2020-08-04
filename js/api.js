@@ -3,7 +3,7 @@ const apiUrl = 'https://api.twitch.tv/kraken';
 const errorMessage = 'Error'
 const id = 'wn8pirkwzemy6ouh1xhj2m7ccym946'
 // 載入更多
-let pageOffset = 20
+let pageOffset = 21
 
 function getApiData(cb, taken) {
   let request = new XMLHttpRequest();
@@ -44,7 +44,7 @@ function videoData(videos) {
 }
 
 function display(video) {
-  for (let i = 0; i < 20; i += 1) {
+  for (let i = 0; i < 21; i += 1) {
     const div = document.createElement('div')
     div.classList.add(`channel`)
     div.innerHTML = `
@@ -65,11 +65,6 @@ function display(video) {
     </div>`
     document.querySelector('.channels').appendChild(div)
   }
-  // const div = document.createElement('div')
-  // div.classList.add('channel')
-  // div.setAttribute('id','load_more')
-  // div.innerHTML = '<a href="#loadMore">Load More <i class="far fa-arrow-alt-circle-right"></i></a>'
-  // document.querySelector('.channels').appendChild(div)
 }
 
 // navbar 選項、載入視頻
@@ -86,11 +81,11 @@ getApiData((data) => {
   getApiData((data) => {
     const videoInfo = videoData(data)
     display(videoInfo)
-  }, `/streams/?game=${encodeURIComponent(topGames[0])}&limit=20`)
+  }, `/streams/?game=${encodeURIComponent(topGames[0])}&limit=21`)
 }, '/games/top?limit=5')
 
 document.querySelector('.navbar').addEventListener('click',(e)=>{
-  pageOffset = 20
+  pageOffset = 21
   let gameName = e.target.innerText
   // 改 title 遊戲名
   document.querySelector('.game_name').innerText = e.target.innerText
@@ -104,13 +99,13 @@ document.querySelector('.navbar').addEventListener('click',(e)=>{
   getApiData((data) => {
     document.querySelector('.channels').innerHTML = ''
     display(videoData(data))
-  }, `/streams/?game=${encodeURIComponent(gameName)}&limit=20`)
+  }, `/streams/?game=${encodeURIComponent(gameName)}&limit=21`)
 })
 
 document.getElementById('load_more').addEventListener('click',(e)=>{
   let gameName = document.querySelector('.game_name').innerText
   getApiData((data) => {
     display(videoData(data))
-  }, `/streams/?game=${encodeURIComponent(gameName)}&limit=20&offset=${pageOffset}`)
-  pageOffset += 20
+  }, `/streams/?game=${encodeURIComponent(gameName)}&limit=21&offset=${pageOffset}`)
+  pageOffset += 21
 })
