@@ -77,7 +77,6 @@ getApiData((data) => {
     document.querySelector('.navbar').append(li)
     document.querySelector('.game_name').innerText = topGames[0]
   }
-
   getApiData((data) => {
     const videoInfo = videoData(data)
     display(videoInfo)
@@ -101,7 +100,6 @@ document.querySelector('.navbar').addEventListener('click',(e)=>{
     display(videoData(data))
   }, `/streams/?game=${encodeURIComponent(gameName)}&limit=21`)
 })
-
 document.getElementById('load_more').addEventListener('click',(e)=>{
   let gameName = document.querySelector('.game_name').innerText
   getApiData((data) => {
