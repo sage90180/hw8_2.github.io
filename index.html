@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Top 5 Games</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous"/>
+  </head>
+  <body>
+    <div class="logo"><img src="./imgs/twitch_logo.svg" alt=""/></div>
+    <nav> 
+      <div class="wrapper"> <img class="top" src="./imgs/top5.svg" alt=""/>
+        <ul class="navbar"></ul>
+      </div>
+    </nav>
+    <section class="title_area">
+      <div class="wrapper">
+        <div class="game_name" data-rank="1"></div>
+        <div class="subtitle">Top 20 popular live streams sorted by current viewers</div>
+      </div>
+      <hr/>
+    </section>
+    <main>
+      <div class="wrapper">
+        <div class="channels"></div>
+      </div>
+      <div id="load_more"><a href="#load_more">Load More <i class="far fa-arrow-alt-circle-down"></i></a></div>
+    </main>
+    <script src="./js/api.js"></script>
+  </body>
+</html>
