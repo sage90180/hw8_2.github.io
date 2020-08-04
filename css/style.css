@@ -256,7 +256,7 @@ main {
     .logo img {
       width: 180px; }
   nav {
-    border-top: solid 8px #8fa8d7; }
+    border-top: solid 8px rgba(12, 14, 39, 0.7); }
     nav .wrapper {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
